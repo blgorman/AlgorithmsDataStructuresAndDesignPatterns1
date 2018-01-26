@@ -27,7 +27,7 @@ public class Driver {
 		Truck t2 = new Truck(VIN, MAKE, MODEL, YEAR, COLOR, MILEAGE);
 		
 		
-		Licensable[] myAutos = new Licensable[6];
+		Paintable[] myAutos = new Paintable[8];
 		myAutos[0] = v1;
 		myAutos[1] = v2;
 		
@@ -37,7 +37,12 @@ public class Driver {
 		myAutos[4] = t1;
 		myAutos[5] = t2;
 		
-		for(Licensable v : myAutos)
+		myAutos[6] = new House();
+		House h = new House();
+		h.setColor("White");
+		myAutos[7] = h;
+		
+		for(Paintable v : myAutos)
 		{
 			System.out.println(v);
 			
@@ -47,6 +52,36 @@ public class Driver {
 				System.out.println(c.getIsConvertible());
 			}
 		}
+		
+		
+		Paintable p = c2;
+		Licensable l = c2;
+		
+		Paintable p2 = h;
+		
+		System.out.println("Licensable: " + l);
+	
+		if (l instanceof Car)
+		{
+			Car c3 = (Car)l;
+			c3.setMake("Chevy");
+			System.out.println("Licensable: " + c3);
+		}
+		
+		
+		if (p instanceof Vehicle)
+		{
+			Vehicle v = (Vehicle)p;
+			Licensable l2 = v;
+			System.out.println("Licensable Paintable: " + l2);
+		}
+		
+		if (p instanceof Licensable)
+		{
+			Licensable l3 = (Licensable)p;
+		}
+		
+		//Licensable l4 = (House)p;
 	}
 
 }
