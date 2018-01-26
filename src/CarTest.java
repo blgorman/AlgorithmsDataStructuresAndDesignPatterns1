@@ -45,6 +45,7 @@ public class CarTest {
 	public void testExplicitConstructor() {
 		assertNotNull("Could not instantiate Vehicle", v2);
 		assertEquals("Vin was not as expected", VIN, v2.getVin());
+		assertEquals("ID was not as expected", VIN, v2.getIdentificationNumber());
 		assertEquals("Make was not as expected", MAKE, v2.getMake());
 		assertEquals("Model was not as expected", MODEL, v2.getModel());
 		assertEquals("Year was not as expected", YEAR, v2.getYear());

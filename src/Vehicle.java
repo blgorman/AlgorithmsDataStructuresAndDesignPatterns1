@@ -3,7 +3,7 @@
  * @author Brian
  *
  */
-public class Vehicle implements Licensable, Paintable
+public abstract class Vehicle implements Licensable, Paintable
 {
 	//VIN
 	private String vin;

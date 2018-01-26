@@ -17,8 +17,8 @@ public class Driver {
 	
 	public static void main(String[] args) {
 		
-		Vehicle v1 = new Vehicle();
-		Vehicle v2 = new Vehicle(VIN, MAKE, MODEL, YEAR, COLOR, MILEAGE);
+		Vehicle v1 = new Car();
+		Vehicle v2 = new Truck(VIN, MAKE, MODEL, YEAR, COLOR, MILEAGE);
 		
 		Car c1 = new Car();
 		Car c2 = new Car(VIN, MAKE, MODEL, YEAR, COLOR, MILEAGE, ISCONVERTIBLE);
