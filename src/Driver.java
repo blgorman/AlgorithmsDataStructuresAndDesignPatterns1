@@ -27,7 +27,7 @@ public class Driver {
 		Truck t2 = new Truck(VIN, MAKE, MODEL, YEAR, COLOR, MILEAGE);
 		
 		
-		Vehicle[] myAutos = new Vehicle[6];
+		Licensable[] myAutos = new Licensable[6];
 		myAutos[0] = v1;
 		myAutos[1] = v2;
 		
@@ -37,7 +37,7 @@ public class Driver {
 		myAutos[4] = t1;
 		myAutos[5] = t2;
 		
-		for(Vehicle v : myAutos)
+		for(Licensable v : myAutos)
 		{
 			System.out.println(v);
 			

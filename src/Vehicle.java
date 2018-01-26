@@ -3,7 +3,7 @@
  * @author Brian
  *
  */
-public class Vehicle 
+public class Vehicle implements Licensable
 {
 	//VIN
 	private String vin;
@@ -150,5 +150,15 @@ public class Vehicle
 								, this.getYear()
 								, this.getColor()
 								, this.getMileage());
+	}
+
+	@Override
+	public String getIdentificationNumber() {
+		return getVin();
+	}
+
+	@Override
+	public void setIdentificationNumber(String value) {
+		setVin(value);
 	}
 }
