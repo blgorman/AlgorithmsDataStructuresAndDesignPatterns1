@@ -9,4 +9,11 @@ public class Truck extends Vehicle
 	{
 		super(startVin, startMake, startModel, startYear, startColor, startMileage);
 	}
+
+	@Override
+	public double getFuelEconomy(double numberOfMiles, double numberOfGallons) {
+		double bonus = -5.0 * numberOfGallons;
+		numberOfMiles += bonus;
+		return numberOfMiles/numberOfGallons;
+	}
 }

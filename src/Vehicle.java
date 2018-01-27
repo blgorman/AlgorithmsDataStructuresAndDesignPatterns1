@@ -161,4 +161,6 @@ public abstract class Vehicle implements Licensable, Paintable
 	public void setIdentificationNumber(String value) {
 		setVin(value);
 	}
+	
+	public abstract double getFuelEconomy(double numberOfMiles, double numberOfGallons);
 }

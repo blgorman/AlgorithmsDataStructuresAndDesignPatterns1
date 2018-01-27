@@ -27,7 +27,7 @@ public class Driver {
 		Truck t2 = new Truck(VIN, MAKE, MODEL, YEAR, COLOR, MILEAGE);
 		
 		
-		Paintable[] myAutos = new Paintable[8];
+		Vehicle[] myAutos = new Vehicle[6];
 		myAutos[0] = v1;
 		myAutos[1] = v2;
 		
@@ -37,23 +37,28 @@ public class Driver {
 		myAutos[4] = t1;
 		myAutos[5] = t2;
 		
-		myAutos[6] = new House();
-		House h = new House();
-		h.setColor("White");
-		myAutos[7] = h;
+		//myAutos[6] = new House();
+		//House h = new House();
+		//h.setColor("White");
+		//myAutos[7] = h;
 		
-		for(Paintable v : myAutos)
+		for(Vehicle v : myAutos)
 		{
 			System.out.println(v);
+			
+			System.out.printf("Fuel Economy: %.2f\n", v.getFuelEconomy(400.0, 20.0));
+			
 			
 			if (v instanceof Car)
 			{
 				Car c = (Car)v;
 				System.out.println(c.getIsConvertible());
 			}
+			
+			
 		}
 		
-		
+		/*
 		Paintable p = c2;
 		Licensable l = c2;
 		
@@ -82,6 +87,8 @@ public class Driver {
 		}
 		
 		//Licensable l4 = (House)p;
+		
+		 */
 	}
 
 }

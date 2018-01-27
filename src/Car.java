@@ -26,6 +26,13 @@ public class Car extends Vehicle
 								, super.toString()
 								, this.getIsConvertible());
 	}
+
+	@Override
+	public double getFuelEconomy(double numberOfMiles, double numberOfGallons) {
+		double bonus = 5.0 * numberOfGallons;
+		numberOfMiles += bonus;
+		return numberOfMiles/numberOfGallons;
+	}
 	
 	/*
 	//While adding an override is not necessarily a violation of Liskov
