@@ -1,3 +1,4 @@
+package com.mgs.vehicle;
 /**
  * A Vehicle.
  * @author Brian

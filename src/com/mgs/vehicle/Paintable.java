@@ -1,3 +1,4 @@
+package com.mgs.vehicle;
 
 public interface Paintable 
 {

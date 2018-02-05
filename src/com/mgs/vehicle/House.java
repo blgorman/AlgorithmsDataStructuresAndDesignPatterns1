@@ -1,3 +1,4 @@
+package com.mgs.vehicle;
 
 public class House implements Paintable {
 	private String color;

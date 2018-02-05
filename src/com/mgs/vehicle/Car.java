@@ -1,3 +1,4 @@
+package com.mgs.vehicle;
 
 public class Car extends Vehicle
 {

@@ -1,3 +1,5 @@
+package com.mgs;
+import com.mgs.vehicle.Vehicle;
 
 public interface Dealership 
 {
