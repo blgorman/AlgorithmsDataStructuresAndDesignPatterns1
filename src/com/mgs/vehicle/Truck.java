@@ -17,4 +17,16 @@ public class Truck extends Vehicle
 		numberOfMiles += bonus;
 		return numberOfMiles/numberOfGallons;
 	}
+	
+	@Override
+	public String Drive()
+	{
+		return "Driving the Truck offroad!";
+	}
+	
+	@Override
+	public String Park()
+	{
+		return "Parking the truck in the garage";
+	}
 }

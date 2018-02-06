@@ -164,4 +164,30 @@ public abstract class Vehicle implements Licensable, Paintable
 	}
 	
 	public abstract double getFuelEconomy(double numberOfMiles, double numberOfGallons);
+
+	public final String DriveVehicle()
+	{
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(String.format("%s\n", Start()));
+		sb.append(String.format("%s\n", Drive()));
+		sb.append(String.format("%s\n", Park()));
+		sb.append(String.format("%s\n", Stop()));
+		
+		return sb.toString();
+	}
+	
+	public abstract String Drive();
+	public abstract String Park();
+	
+	public String Start()
+	{
+		return "Starting the engine for the vehicle...";
+	}
+	
+	public String Stop()
+	{
+		return "Stopping the engine for the vehicle...";
+	}
+	
 }

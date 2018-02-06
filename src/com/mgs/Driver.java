@@ -85,6 +85,12 @@ public class Driver {
 			continueLoop = input.nextLine().toLowerCase().startsWith("y");
 		}
 		
+		for (int i = 0; i < aLot.numberOfVehiclesForSale(); i++)
+		{
+			Vehicle v = vehicles[i];
+			String s = v.DriveVehicle();
+			System.out.println(s);
+		}
 		
 		System.out.println("Completed");
 	}

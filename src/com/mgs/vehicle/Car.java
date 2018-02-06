@@ -35,6 +35,19 @@ public class Car extends Vehicle
 		return numberOfMiles/numberOfGallons;
 	}
 	
+	
+	@Override
+	public String Drive()
+	{
+		return "Driving the car...";
+	}
+	
+	@Override
+	public String Park()
+	{
+		return "Parking the car in the garage";
+	}
+	
 	/*
 	//While adding an override is not necessarily a violation of Liskov
 	//adding a method that does more than change direction (i.e. changing the speed)
