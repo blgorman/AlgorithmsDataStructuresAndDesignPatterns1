@@ -25,15 +25,16 @@ public abstract class Vehicle implements Licensable, Paintable
 
 	private double bearing;
 	
+	
 	public Vehicle() {
 		//do nothing
 	}
 	
 	public Vehicle(String startVin, String startMake, String startModel, int startYear, String startColor, double startMileage)
 	{
-		vin = startVin;
-		make = startMake;
-		model = startModel;
+		setVin(startVin);
+		setMake(startMake);
+		setModel(startModel);
 		year = startYear;
 		color = startColor;
 		mileage = startMileage;
@@ -47,6 +48,10 @@ public abstract class Vehicle implements Licensable, Paintable
 	}
 	public void setVin(String value)
 	{
+		if (value == null || value == "")
+		{
+			throw new IllegalArgumentException("VIN cannot be null");
+		}
 		vin = value;
 	}
 	
@@ -167,6 +172,11 @@ public abstract class Vehicle implements Licensable, Paintable
 
 	public final String DriveVehicle()
 	{
+		if (!isRunning)
+		{
+			throw new VehicleNotStartedException("Must start the vehicle to drive it!");
+		}
+		
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append(String.format("%s\n", Start()));

@@ -88,6 +88,7 @@ public class Driver {
 		for (int i = 0; i < aLot.numberOfVehiclesForSale(); i++)
 		{
 			Vehicle v = vehicles[i];
+			v.start();
 			String s = v.DriveVehicle();
 			System.out.println(s);
 		}
