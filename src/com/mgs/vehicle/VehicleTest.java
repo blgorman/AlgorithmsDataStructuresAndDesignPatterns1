@@ -18,7 +18,7 @@ public abstract class VehicleTest {
 	//MODEL
 	protected static String MODEL = "Mustang GT";
 	//YEAR
-	protected static int YEAR = 2021;
+	protected static int YEAR = 2019;
 	//COLOR
 	protected static String COLOR = "Blue";
 	//Mileage
@@ -57,6 +57,29 @@ public abstract class VehicleTest {
 	public void testVIN() {
 		v.setVin(VIN);
 		assertEquals("Vin was not as expected", VIN, v.getVin());
+	}
+	
+	@Test
+	public void testInvalidVIN()
+	{
+		boolean passed = false;
+		
+		try
+		{
+			v.setVin(null);
+		}
+		catch (IllegalArgumentException iaex)
+		{
+			passed = true;
+		}
+		
+		assertTrue("Passed was never toggled; exception not thrown", passed);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testInvalidVinEmptyString()
+	{
+		v.setVin("");
 	}
 	
 	@Test

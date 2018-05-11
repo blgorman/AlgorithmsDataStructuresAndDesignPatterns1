@@ -1,4 +1,7 @@
 package com.mgs.vehicle;
+
+import java.util.Calendar;
+
 /**
  * A Vehicle.
  * @author Brian
@@ -6,6 +9,9 @@ package com.mgs.vehicle;
  */
 public abstract class Vehicle implements Licensable, Paintable
 {
+	private final int MAX_VEHICLE_YEAR = Calendar.getInstance().get(Calendar.YEAR) + 1;
+	private final int MIN_VEHICLE_YEAR = 1900;
+	
 	//VIN
 	private String vin;
 	//MAKE
@@ -35,9 +41,9 @@ public abstract class Vehicle implements Licensable, Paintable
 		setVin(startVin);
 		setMake(startMake);
 		setModel(startModel);
-		year = startYear;
-		color = startColor;
-		mileage = startMileage;
+		setYear(startYear);
+		setColor(startColor);
+		setMileage(startMileage);
 		speed = 0.0;
 	}
 	
@@ -62,6 +68,10 @@ public abstract class Vehicle implements Licensable, Paintable
 	}
 	public void setMake(String value)
 	{
+		if (value == null || value == "")
+		{
+			throw new IllegalArgumentException("Make cannot be null");
+		}
 		make = value;
 	}
 	
@@ -72,6 +82,10 @@ public abstract class Vehicle implements Licensable, Paintable
 	}
 	public void setModel(String value)
 	{
+		if (value == null || value == "")
+		{
+			throw new IllegalArgumentException("Model cannot be null");
+		}
 		model = value;
 	}
 	
@@ -82,6 +96,11 @@ public abstract class Vehicle implements Licensable, Paintable
 	}
 	public void setYear(int value)
 	{
+		
+		if (value < MIN_VEHICLE_YEAR || value > MAX_VEHICLE_YEAR)
+		{
+			throw new IllegalArgumentException("Invalid year for vehicle");
+		}
 		year = value;
 	}
 	
@@ -103,6 +122,10 @@ public abstract class Vehicle implements Licensable, Paintable
 	
 	public void setMileage(double value)
 	{
+		if (mileage < 0.0)
+		{
+			throw new IllegalArgumentException("Invalid mileage for vehicle");
+		}
 		mileage = value;
 	}
 	
